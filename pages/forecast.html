@@ -6,14 +6,7 @@
 <div ng-repeat ="w in weatherResult.list">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<div class="panel-title"> {{ convertToDate(w.dt) | date: "MMM d, y"}}</div>
-				</div>
-				<div class="panel-body">
-					Daytime temperature in Celsius: {{ convertToCelsius(w.temp.day) }}
-				</div>
-			</div>
+			<weather-report weather-day="w" convert-to-standard="convertToCelsius(degreeTemp)" convert-to-date="convertToDate(dt)" date-format="MMM d, y"></weather-report>
 		</div>
 	</div>
 </div>

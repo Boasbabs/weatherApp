@@ -54,4 +54,17 @@ weatherApp.controller("forecastController", ["$scope", "$resource", "$routeParam
 	console.log($scope.weatherResult);
 }]);
 
-	//$scope.weatherAPI = $resource("http://api.openweathermap.org/data/2.5/forecast/daily?q='{{$scope.city}}'&APPID=27d43832d2a4adcb97fcbfa23db130aa",
+// DIRECTIVES
+weatherApp.directive("weatherReport", function() {
+	return 	{
+		restrict: "E",
+		templateUrl: "directives/weatherReport.html",
+		replace: true,
+		scope:  {
+			weatherDay: "=",
+			convertToStandard: "&",
+			convertToDate: "&",
+			dateFormat: "@"
+		}
+	}
+});
